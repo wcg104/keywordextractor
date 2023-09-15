@@ -1,0 +1,27 @@
+{
+  "name": "wcg/keyword-extractor",
+  "description": "A Laravel package for keyword extraction",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dhruv",
+      "email": "dhruv.p@webcodegenie.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Wcg\\KeywordExtractor\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "Wcg\\KeywordExtractor\\KeywordExtractorServiceProvider"
+        ]
+    }
+}
+}
