@@ -50,7 +50,7 @@ class KeywordExtractor
         $description = strtolower($description);
 
         // Tokenize the description text
-        $words = str_word_count($description, 1); // Include digits
+        $words = str_word_count($description, 1,"0..9"); // Include digits
 
 
         // Remove stopwords
@@ -62,15 +62,16 @@ class KeywordExtractor
         });
 
         // Count word frequencies
-        $wordFrequencies = array_count_values($filteredWords);
+        $wordFrequencies = array_unique($filteredWords);
 
         // Sort words by frequency (descending order)
-        arsort($wordFrequencies);
+        ksort($wordFrequencies);
 
         // Get the top N keywords
-        $keywords = array_keys(array_slice($wordFrequencies, 0));
 
+        $keywords = array_values($wordFrequencies);
         return $keywords;
+
     }
 
 
